@@ -7,8 +7,12 @@ test("Add Certification Specialty - Positive Flow", async function({page}) {
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
@@ -20,7 +24,7 @@ test("Add Certification Specialty - Positive Flow", async function({page}) {
     await page.waitForTimeout(5000)
     
     // Step 2: Navigate to Profile via user menu (like ProfileTest does)
-    await page.locator("//div[@class='w-8 h-8 bg-gray-400 text-black rounded-full flex items-center justify-center text-sm font-semibold overflow-hidden']").click()
+    await page.locator("//div[@class='w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-medium']").click()
     await page.waitForTimeout(3000)
     
     await page.locator("//a[normalize-space()='My Profile']").click()
@@ -75,8 +79,12 @@ test("Add Certification Specialty - Empty Fields Validation", async function({pa
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
@@ -127,8 +135,12 @@ test("Add Certification Specialty - Duplicate Validation", async function({page}
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
@@ -330,8 +342,12 @@ test("Delete Certification Specialty", async function({page}) {
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
@@ -408,8 +424,12 @@ test("Add Multiple Certification Specialties", async function({page}) {
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })

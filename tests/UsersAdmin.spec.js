@@ -7,8 +7,12 @@ test("Navigate to Dashboard Admin after login", async function({ page }) {
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("admin@jobapp.com")
@@ -39,8 +43,12 @@ test("Open the Users Tab", async function({ page }){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("admin@jobapp.com")
@@ -79,8 +87,12 @@ test("Create a new user", async function ({ page }){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("admin@jobapp.com")
@@ -141,8 +153,12 @@ test("Verify Delete user functionality", async function({ page }){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("admin@jobapp.com")
@@ -208,8 +224,12 @@ test("Edit User details", async function({ page }){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("admin@jobapp.com")
@@ -267,14 +287,18 @@ test("Edit User details", async function({ page }){
 })
 
 // Test: Verfiy navigating to the user's details page
-test.only("Verfiy navigating to the user's details page", async function({ page }){
+test("Verfiy navigating to the user's details page", async function({ page }){
      // Navigate to the homepage
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("admin@jobapp.com")

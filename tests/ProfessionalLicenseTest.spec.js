@@ -9,8 +9,12 @@ test("Add Professional License - Positive Flow", async function({page}){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
@@ -123,8 +127,12 @@ test("Add Professional License - Validation Messages", async function({page}){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
@@ -190,8 +198,12 @@ test("Update Professional License - Edit Existing License", async function({page
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
@@ -360,8 +372,12 @@ test.only("Delete Professional License", async function({page}){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })

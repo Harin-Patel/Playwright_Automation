@@ -1,5 +1,4 @@
 const { test, expect } = require("@playwright/test")
-test.use({viewport: { width: 1920, height: 849 }})
 
 // Test: Sign Up Flow with valid credentials
 test("Sign Up Flow with valid credentials", async function({ page }) {
@@ -7,8 +6,8 @@ test("Sign Up Flow with valid credentials", async function({ page }) {
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
 
-    // Click on the 'Sign Up' link
-    await page.locator("//a[normalize-space()='Sign Up']").click()
+    // Click on the 'Join Gypsy Nurse' button
+    await page.locator("//a[normalize-space()='Join Gypsy Nurse']").click()
     await page.waitForTimeout(2000)
 
     // Fill out the registration form with valid data
@@ -38,7 +37,7 @@ test("Check email already exists validation", async function({ page }) {
     await page.waitForTimeout(3000)
 
     // Click on the 'Sign Up' link
-    await page.locator("//a[normalize-space()='Sign Up']").click()
+    await page.locator("//a[normalize-space()='Join Gypsy Nurse']").click()
     await page.waitForTimeout(2000)
 
     // Fill out the registration form with an existing email
@@ -68,7 +67,7 @@ test("Check validation messages for all fields when no data is filled", async fu
     await page.waitForTimeout(3000)
 
     // Click on the 'Sign Up' link
-    await page.locator("//a[normalize-space()='Sign Up']").click()
+    await page.locator("//a[normalize-space()='Join Gypsy Nurse']").click()
     await page.waitForTimeout(2000)
 
     // Scroll to the bottom to ensure the Register button is visible
@@ -97,7 +96,7 @@ test.only("Redirect to Login page from Register screen", async function({ page }
     await page.waitForTimeout(3000)
 
     // Click on the 'Sign Up' link to go to the registration page
-    await page.locator("//a[normalize-space()='Sign Up']").click()
+    await page.locator("//a[normalize-space()='Join Gypsy Nurse']").click()
     await page.waitForTimeout(2000)
 
     // Scroll to the bottom of the page to ensure the 'Login here' link is visible

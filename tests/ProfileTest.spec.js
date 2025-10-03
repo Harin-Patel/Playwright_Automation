@@ -8,8 +8,12 @@ test("Profile Page - View and Edit Profile", async function({page}){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("john@mailinator.com", { delay: 100 })
@@ -24,7 +28,7 @@ test("Profile Page - View and Edit Profile", async function({page}){
     await page.waitForTimeout(5000)
 
     // Open user menu and sign out
-    await page.locator("//div[@class='w-8 h-8 bg-gray-400 text-black rounded-full flex items-center justify-center text-sm font-semibold overflow-hidden']").click()
+    await page.locator("//div[@class='w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-medium']").click()
     await page.waitForTimeout(3000)
 
     // Click on 'Profile' from the user menu
@@ -65,11 +69,15 @@ test("Edit Profile Information - Positive Flow", async function({page}){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
 
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
+
     // Enter valid email and password
-    await page.getByPlaceholder("Enter your email").type("john@mailinator.com", { delay: 100 })
+    await page.getByPlaceholder("Enter your email").type("demo2@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
 
     // Click the eye icon to view the password
@@ -81,7 +89,7 @@ test("Edit Profile Information - Positive Flow", async function({page}){
     await page.waitForTimeout(5000)
 
     // Open user menu (using the new button selector from page snapshot)
-    await page.locator("//div[@class='w-8 h-8 bg-gray-400 text-black rounded-full flex items-center justify-center text-sm font-semibold overflow-hidden']").click()
+    await page.locator("//div[@class='w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-medium']").click()
     await page.waitForTimeout(3000)
 
     // Click on 'My Profile' from the dropdown
@@ -185,8 +193,12 @@ test("Edit Profile Information - Validation Messages", async function({page}){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
@@ -201,7 +213,7 @@ test("Edit Profile Information - Validation Messages", async function({page}){
     await page.waitForTimeout(5000)
 
     // Open user menu (using the new button selector from page snapshot)
-    await page.locator("//div[@class='w-8 h-8 bg-gray-400 text-black rounded-full flex items-center justify-center text-sm font-semibold overflow-hidden']").click()
+    await page.locator("//div[@class='w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-medium']").click()
     await page.waitForTimeout(3000)
 
     // Click on 'My Profile' from the dropdown

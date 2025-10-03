@@ -1,17 +1,21 @@
 const { test, expect } = require("@playwright/test")
 
 // Test: Login Flow with valid credentials
-test("Login Flow with valid credentials", async function({ page }) {
+test.only("Login Flow with valid credentials", async function({ page }) {
     // Navigate to the homepage
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
 
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
+
     // Enter valid email and password
-    await page.getByPlaceholder("Enter your email").type("qa@yopmail.com")
+    await page.getByPlaceholder("Enter your email address").type("jack@yopmail.com")
     await page.getByPlaceholder("Enter your password").type("Harin123")
 
     //Click the eye icon to view the password
@@ -35,8 +39,12 @@ test("Login Flow with invalid credentials", async function({ page }) {
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter invalid email or password
     await page.getByPlaceholder("Enter your email").type("qa1@yopmail.com")
@@ -59,8 +67,12 @@ test("Login Flow with empty credentials", async function({ page }){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Click the Login button without entering credentials
     await page.locator("//button[normalize-space()='Login']").click()
@@ -80,8 +92,12 @@ test("Enter email only and click on login", async function({ page }) {
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter only the email
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com")
@@ -104,8 +120,12 @@ test("Enter password only and click on login", async function({ page }) {
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter only the password
     await page.getByPlaceholder("Enter your password").type("Harin123")
@@ -128,8 +148,12 @@ test("Sign out from the app", async function({ page }){
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Enter valid email and password
     await page.getByPlaceholder("Enter your email").type("JenLail1117@gmail.com")
@@ -144,7 +168,7 @@ test("Sign out from the app", async function({ page }){
     await page.waitForTimeout(5000)
 
     // Open user menu and sign out
-    await page.locator("//div[@class='w-8 h-8 bg-gray-400 text-black rounded-full flex items-center justify-center text-sm font-semibold overflow-hidden']").click()
+    await page.locator("//div[@class='w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-medium']").click()
     await page.waitForTimeout(3000)
     await page.locator("//button[normalize-space()='Sign Out']").click()
 
@@ -161,14 +185,18 @@ test("Sign out from the app", async function({ page }){
 })
 
 // Test: Forgot Password Flow
-test.only("Forgot Password Flow", async function({ page }) {
+test("Forgot Password Flow", async function({ page }) {
     // Navigate to the homepage
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
 
     // Click on the 'Login' link
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
 
     // Click on 'Forgot your password?' link
     await page.locator("//button[normalize-space()='Forgot your password?']").click()

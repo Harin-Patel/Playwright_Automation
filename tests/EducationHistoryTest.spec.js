@@ -7,8 +7,12 @@ test("Add Education History - Positive Flow", async function({page}) {
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
@@ -122,8 +126,12 @@ test("Add Education History - Without Graduation", async function({page}) {
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
@@ -216,8 +224,12 @@ test("View Education History Section", async function({page}) {
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
@@ -256,8 +268,12 @@ test("Update Education History", async function({page}) {
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
@@ -416,8 +432,12 @@ test.only("Delete Education History", async function({page}) {
     await page.goto("http://tgn-frontend-staging-375478166582-us-east-1.s3-website-us-east-1.amazonaws.com/")
     await page.waitForTimeout(3000)
     
-    await page.locator("//a[normalize-space()='Login']").click()
+    await page.locator("//button[normalize-space()='Log in']").click()
     await page.waitForTimeout(2000)
+
+    // Select For Job Seekers option from the dropdown
+    await page.locator("//a[normalize-space()='For Job Seeker']").click()
+    await page.waitForTimeout(1000)
     
     await page.getByPlaceholder("Enter your email").type("qa@yopmail.com", { delay: 100 })
     await page.getByPlaceholder("Enter your password").type("Harin123", { delay: 100 })
